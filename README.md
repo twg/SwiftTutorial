@@ -63,9 +63,8 @@
 - Can have computed properties and functions
 - **Cannot** inherit
 - Pass by value
-
-Reference lets can mutate properties, not reference
-Value lets cannot mutate properties, unless through a mutating function
+- Reference lets can mutate properties, not reference
+- Value lets cannot mutate properties, unless through a mutating function
 
 ## 5. Enumerations
 - Raw values
