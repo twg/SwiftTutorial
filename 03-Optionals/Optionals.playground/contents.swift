@@ -1,28 +1,80 @@
 
 /*:
-# Basics
+# Optionals
 
-Guiding Principles:
+What the heck is an optional? That's right - we don't know!
 
-* Safety
-* Functional
+What happens when you query a dictionary for a key? It's possible
+that you get a value back, but it's also possible you don't have that key.
+Should you return nil? A unique value? NSNotFound?
+
+Optionals exist to represent that state, the chance an object may not exist
 
 */
+
+//: This is of type `String`
+var name = "Jane"
+
+//: Setting name to nil will not compile - because `name` is not an optional
+//name = nil 
+
+let map = ["Toronto": "Canada", "Florida": "USA"]
+
+//: This is of type `String?` - An optional string value that does exist
+var toronto = map["Toronto"]
+
+//: This is of type `String?` - An optional string value that doesn't exist
+var boston = map["Boston"]
+
+//: Setting optional strings to nil is fine
+var optionalString:String? = "Jane"
+optionalString = nil
 
 /*:
-### **Static Typing**
+Optionals are compiler level enforcement of dealing with nil.
+In Objective-C sending messages to nil, doesn't crash (like other languages),
+but rather, just silently returns nil again. This is usually fine, but in 
+some cases, this creates wierd behaviour:
 
-- Compiler is able to infer type of variables
+    [nil isEqualToString:nil] => false
+
+It also helps enforce handling all cases which makes for a more robust program
+
 */
 
-let numberAsInt = 3
+//: Check for nil first
+if boston == nil {
+    println("boston in nil")
+}else{
+    println("Boston is in \(boston!)")
+}
 
-let numberAsFloat = 3.0
+//: If not nil, you can force unwrap using the ! operator
+if toronto == nil {
+    println("toronto in nil")
+}else{
+    println("toronto is in \(toronto!)")
+}
 
-let result = numberAsInt + numberAsFloat
+//: Alteratively, use the if-let syntax for safer code. No ! operator
 
-let string = "Hello"
+if let tor = toronto {
+    println("toronto is in \(tor)")
+}
 
-let array = [1,2,3,4,5]
+if let bos = boston {
+    println("boston is in \(bos)")
+}else{
+    println("Boston is nowhere to be found")
+}
+
+
+/*:
+### Important
+
+This concept is very important when dealing with parsing JSON!
+
+*/
+
 
 
