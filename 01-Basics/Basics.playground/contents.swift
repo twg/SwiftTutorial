@@ -1,17 +1,36 @@
 /*:
 # Basics
 
-Guiding Principles:
+Apple's Guiding Principles:
 
-* Safety
-* Functional
+* Safe - use the compiler to your advantage
+* Modern - modern syntax and best practices
+* Power - cool new things
 
 */
 
-/*: 
+/*:
+## Type Inference
+The compiler can infer the type of the variable so there is no
+need to explicity state the type.
+
+In Objective-C everthing must be explicity declared:
+> NSString *firstName = @"Jane"
+
+*/
+
+// Explicity define type
+let firstName:String = "Jane"
+
+// Use type inference
+let lastName = "Doe" // String
+let age = 42 // Int
+let weight = 102.5 // Double
+
+/*:
 ## Explicit Mutability
 * `let` implies value is **constant**
-* `var` allows you to change the value of the variable
+* `var` allows you to change the value
 */
 
 let immutable = 3
@@ -21,42 +40,57 @@ var mutable = 3
 mutable = 4 // No problem!
 
 /*:
-## Static Typing
+## Modern string interpolation.
+
+Objective C:
+> NSLog("Her name was %@ %@", firstName, lastName")
+
 */
-
-/*: Integer */
-let numberAsInt = 3
-
-/*: Double */
-let numberAsDouble = 3.0
+println("Her name was \(firstName) \(lastName)")
 
 /*: 
-Can explicity define to desired type
+## Collections
 
-> let <variableName>:<type> = <value>
-*/
-let numberAsFloat:Float = 3.0
-
-/*: String */
-let string = "Hello"
-
-/*: 
-Collections know the types of the nested elements
-
-The following is an array of type Int
+2 main differences from Objective C:
+* Collections can have any type - not just objects
+* Collections are typed for more safety
 
 */
-let array = [1,2,3,4,5]
 
-// is the same as:
+// Also type inferred
+let array = [1, 2, 3, 4, 5]
+var mutableArray = [1, 2, 3, 4, 5]
 
-let typedArray:[Int] = [1,2,3,4,5]
+// Explicit typed collections
+let strings:[String] = ["hi"]
 
-// because it's `let`, we cannot change it
-//typedArray.append(6) // does not compile
+// Mutability check:
+//let array.append(2) // does not compile because not mutable
+mutableArray.append(10) // no problem!
 
-var mutableArray = [1,2,3,4,5,6]
-mutableArray.append(7)
+// Type check:
+mutableArray.append(12) // ok!
+//mutableArray.append("hi") // does not compile because of type
+
+// Similar behaviour for dictionaries
+let example:[String:String] = ["hi" : "john"]
+
+let teamRatings = [
+    "Maple Leafs" : 1.0,
+    "Flyers" : 5.0,
+    "Canadiens" : 2.0
+]
+//teamRatings["Canucks"] = 2.0 // does not compile
+
+var mutableRatings = [
+    "Maple Leafs" : 1.0,
+    "Flyers" : 5.0,
+    "Canadiens" : 2.0
+]
+mutableRatings["Canucks"] = 2.0 // does not compile
+println(mutableRatings)
+
+
 
 
 
