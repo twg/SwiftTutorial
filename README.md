@@ -20,8 +20,6 @@
 - Typed
 
 ## 2. Control Flow
-
-### Control Flow
 - For Loops
 - Ranges
 - Tuples
