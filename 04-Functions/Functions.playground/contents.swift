@@ -8,7 +8,7 @@ In Swift, functions are just named closures, and closures are first-class types
 
 //: Basic Function
 func sayHappyMothersDay() {
-    println("Happy Mother's Day")
+    print("Happy Mother's Day")
 }
 sayHappyMothersDay()
 
@@ -22,7 +22,7 @@ add2Plus2()
 func add(number1: Int, number2: Int) -> Int {
     return number1 + number2
 }
-add(20, 24)
+add(20, number2: 24)
 
 //: Default parameters
 func addWithDefault(number1: Int, number2: Int = 10) -> Int {
@@ -46,17 +46,17 @@ This is one of the key principles of Functional Programming.
 
 //: Accepting functions as a parameter
 func combineNumbers(a: Int, b:Int, expr: (Int, Int) -> (Int)) -> Int {
-    println("Got \(a) and \(b) as inputs")
+    print("Got \(a) and \(b) as inputs")
     return expr(a,b)
 }
 
 //: Using the functions
-combineNumbers(11, 1, { (a, b) -> Int in
+combineNumbers(11, b: 1, expr: { (a, b) -> Int in
     return a - b
 })
 
 //: As a "Trailing Closure"
-combineNumbers(2, 3) { (a, b) in
+combineNumbers(2, b: 3) { (a, b) in
     return a + b
 }
 

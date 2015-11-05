@@ -12,7 +12,7 @@ For Loops
 */
 
 for i in 0..<5 {
-    println("Loop Number: \(i)")
+    print("Loop Number: \(i)")
 }
 
 /*:
@@ -26,7 +26,7 @@ Dictionary Enumeration
 let grades = ["Margaret" : "A", "Bob" : "A", "David" : "C", "Susie" : "B"]
 
 for (name, grade) in grades {
-    println("\(name) got a grade of \(grade) in class")
+    print("\(name) got a grade of \(grade) in class")
 }
 
 /*: 
@@ -55,27 +55,27 @@ much more frequenly then ever before.
 //: Basic Example
 let four = 4
 switch(four) {
-case 0: println("It's a zero")
-case 1: println("It's a one")
-case 2: println("It's a two")
-case 3: println("It's a three")
-case 4: println("It's a four")
-default: println("It's a BIG number")
+case 0: print("It's a zero")
+case 1: print("It's a one")
+case 2: print("It's a two")
+case 3: print("It's a three")
+case 4: print("It's a four")
+default: print("It's a BIG number")
 }
 
 //: Pattern Matching
 switch(four) {
-case 1...3: println("It's less than four!")
-case 4: println("It's four!")
-default: println("It's much larger than four")
+case 1...3: print("It's less than four!")
+case 4: print("It's four!")
+default: print("It's much larger than four")
 }
 
 //: Switch on Any Type
 
 let name = "John Smith"
 switch(name){
-case "John Smith": println("JOHN!!!")
-default: println("nope")
+case "John Smith": print("JOHN!!!")
+default: print("nope")
 }
 
 

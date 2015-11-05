@@ -23,12 +23,12 @@ let p = Person()
 
 //: Non-optional property must be set in the intializer
 class Dog {
-    let bread:String
-    init(bread:String){
-        self.bread = bread
+    let breed:String
+    init(breed:String){
+        self.breed = breed
     }
 }
-let d = Dog(bread: "Pug")
+let d = Dog(breed: "Pug")
 
 //: Can set default values on properties without requiring initializers
 class Car {
@@ -45,7 +45,7 @@ let e = Exam()
 //: Inheritence allows for property overrides
 class Poodle:Dog {
     init(){
-        super.init(bread:"Poodle")
+        super.init(breed:"Poodle")
     }
 }
 let poodle = Poodle()
@@ -53,7 +53,7 @@ let poodle = Poodle()
 //: Methods are just functions
 class Child {
     func talk() {
-        println("I like candy")
+        print("I like candy")
     }
 }
 let child = Child()
@@ -62,7 +62,7 @@ child.talk()
 //: Overriding methods must use override keyword for compiler level safety
 class Toddler : Child {
     override func talk() {
-        println("NO")
+        print("NO")
     }
 }
 let toddler = Toddler()
@@ -79,16 +79,16 @@ class Student {
     }
 }
 let student = Student()
-println(student.description)
+print(student.description)
 
 //: Built in property observers give access to `newValue` and `oldValue`
 class Beer {
     var rating:Int{
         willSet{
-            println("Setting rating to \(newValue)")
+            print("Setting rating to \(newValue)")
         }
         didSet{
-            println("Did set rating from \(oldValue)")
+            print("Did set rating from \(oldValue)")
         }
     }
 

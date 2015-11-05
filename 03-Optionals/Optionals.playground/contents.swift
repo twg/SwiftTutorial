@@ -44,28 +44,28 @@ It also helps enforce handling all cases which makes for a more robust program
 
 //: Check for nil first
 if boston == nil {
-    println("boston in nil")
+    print("boston in nil")
 }else{
-    println("Boston is in \(boston!)")
+    print("Boston is in \(boston!)")
 }
 
 //: If not nil, you can force unwrap using the ! operator
 if toronto == nil {
-    println("toronto in nil")
+    print("toronto in nil")
 }else{
-    println("toronto is in \(toronto!)")
+    print("toronto is in \(toronto!)")
 }
 
 //: Alteratively, use the if-let syntax for safer code. No ! operator
 
 if let tor = toronto {
-    println("toronto is in \(tor)")
+    print("toronto is in \(tor)")
 }
 
 if let bos = boston {
-    println("boston is in \(bos)")
+    print("boston is in \(bos)")
 }else{
-    println("Boston is nowhere to be found")
+    print("Boston is nowhere to be found")
 }
 
 
