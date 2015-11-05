@@ -28,14 +28,14 @@ struct AwesomeSize {
     }
 }
 let awesome = AwesomeSize(width: 100, height: 100)
-println(awesome.area)
+print(awesome.area)
 
 //: Can have methods
 struct Person {
     let name:String
 
     func speakName() {
-        println("My name is \(name)")
+        print("My name is \(name)")
     }
 }
 let p = Person(name: "john")

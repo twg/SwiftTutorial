@@ -46,7 +46,7 @@ Objective C:
 > NSLog("Her name was %@ %@", firstName, lastName")
 
 */
-println("Her name was \(firstName) \(lastName)")
+print("Her name was \(firstName) \(lastName)")
 
 /*: 
 ## Collections
@@ -88,7 +88,7 @@ var mutableRatings = [
     "Canadiens" : 2.0
 ]
 mutableRatings["Canucks"] = 2.0 // does not compile
-println(mutableRatings)
+print(mutableRatings)
 
 
 
